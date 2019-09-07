@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
 
+project(anton_assert CXX)
+
 add_library(anton_assert
     "${CMAKE_CURRENT_SOURCE_DIR}/include/anton_assert.hpp"
+)
+
+set_target_properties(anton_assert
+    PROPERTIES
+    CXX_STANDARD 17
+    CXX_EXTENSIONS OFF
 )
 
 if(WIN32)
