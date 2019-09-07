@@ -13,7 +13,7 @@
 #include <string.h> // memset
 #include <string>
 
-std::string to_string(void* value) {
+[[nodiscard]] static std::string to_string(void* value) {
     char buffer[50] = {};
     uintptr_t address = reinterpret_cast<uintptr_t>(value);
     int written_chars = sprintf(buffer, "0x%016llx", address);
